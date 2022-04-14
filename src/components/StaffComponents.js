@@ -19,7 +19,6 @@ class StaffList extends Component {
             return (
                 <div className='col-12'>
                 <Card>
-                    
                     <CardBody>
                         <CardTitle>Họ và Tên: {staff.name}</CardTitle>
                             <CardText>
@@ -29,7 +28,7 @@ class StaffList extends Component {
                                 Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}
                             </CardText>
                             <CardText>
-                                Phòng ban: {staff.department}
+                                Phòng ban: {staff.department.name}
                             </CardText>
                             <CardText>
                                 Số ngày nghỉ còn lại: {staff.annualLeave}
@@ -44,7 +43,7 @@ class StaffList extends Component {
         }
         else {
             return (
-                <div></div>
+                <div className='col-12'><strong>Bấm vào tên nhân viên để xem thông tin.</strong></div>
             )
         }
     }
