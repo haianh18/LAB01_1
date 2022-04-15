@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import dateFormat from 'dateformat';
 
-import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 class StaffList extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +25,8 @@ class StaffList extends Component {
         if (staff != null) {
             return (
                 <div className='col-12 col-md-6 col-lg-4'>
-                <Card>
+                    <Card className='container'>
+                    <CardImg width='100%' className=' mt-1 mx-auto img-thumbnail' src={staff.image}/>
                     <CardBody>
                         <CardTitle>Họ và Tên: {staff.name}</CardTitle>
                             <CardText>

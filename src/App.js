@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import StaffList from "./components/StaffComponents";
 import { STAFFS } from "./shared/staffs";
 class App extends Component {
