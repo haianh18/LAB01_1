@@ -13,11 +13,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Ứng dụng quản lý nhân sự v1.0</NavbarBrand>
-          </div>
-        </Navbar>
+        <div className='container'>
+        <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
+            <div className='navbar-brand'>Ứng dụng quản lý nhân sự v1.0</div>
+        </nav>
+        </div>
         <StaffList staffs ={this.state.staffs} />
       </div>
     );
