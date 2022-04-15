@@ -6,7 +6,8 @@ class StaffList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           selectedStaff: null
+            selectedStaff: null,
+            selectedColumn: 'col-12 col-md-6 col-lg-4 mt-3'
         }
     }
 
@@ -14,10 +15,16 @@ class StaffList extends Component {
         this.setState({ selectedStaff: staff });
     }
 
+    onColumnSelect(col) {
+        this.setState({
+            selectedColumn: col
+        })
+    }
+
     renderStaff(staff) {
         if (staff != null) {
             return (
-                <div className='col-12'>
+                <div className='col-12 col-md-6 col-lg-4'>
                 <Card>
                     <CardBody>
                         <CardTitle>Họ và Tên: {staff.name}</CardTitle>
@@ -52,7 +59,7 @@ class StaffList extends Component {
 
         const staffList = this.props.staffs.map((staff) => {
             return (
-                <div className='col-12 col-md-6 col-lg-4 mt-3'>
+                <div className={this.state.selectedColumn}>
                     <Card key={staff.id} onClick={() => this.onStaffSelect(staff)}>
                         <CardBody>
                             <CardTitle>{staff.name}</CardTitle>
